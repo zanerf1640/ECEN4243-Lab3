@@ -92,7 +92,7 @@ module testbench();
    initial
      begin
 	string memfilename;
-        memfilename = {"../testing/xor.memfile"};
+        memfilename = {"../riscvtest/test_hw.memfile"};
 	$readmemh(memfilename, dut.imem.RAM);
      end
    
@@ -174,7 +174,7 @@ module riscv(input  logic        clk, reset,
                StallF, PCF, InstrF,
 	             opD, funct3D, funct7b5D, StallD, FlushD, ImmSrcD,
 	             FlushE, ForwardAE, ForwardBE, PCSrcE, ALUControlE, ALUSrcE, ALUASrcE, JalrE, 
-               ZeroE, LessE, MemWriteM, WriteDataM, ALUResultM, ReadDataM,
+               ZeroE, LessE, LessUE, MemWriteM, WriteDataM, ALUResultM, ReadDataM,
                RegWriteW, ResultSrcW,
                Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW);
 
@@ -303,7 +303,12 @@ module aludec(input  logic       opb5,
    always_comb
      case(ALUOp)
        2'b00:                ALUControl = 4'b0000; // addition
-       2'b01:                ALUControl = 4'b0001; // subtraction
+       2'b01: case(funct3)
+                  3'b000, 3'b001: ALUControl = 4'b0001; // beq, bne
+                  3'b100, 3'b101: ALUControl = 4'b0101; // blt, bge
+                  3'b110, 3'b111: ALUControl = 4'b1001; // bltu, bgeu
+                  default:        ALUControl = 4'b0001; // fallback
+       endcase
        2'b11:                ALUControl = 4'b1111; // pass B for lui
        default: case(funct3) // R-type or I-type ALU
                   3'b000:  if (RtypeSub) 
@@ -344,7 +349,7 @@ module datapath(input logic clk, reset,
                 input logic 	      ALUSrcE,   // ALU SrcB mux
                 input logic         ALUASrcE,  // ALU SrcA mux
                 input logic         JalrE,     // JALR mux
-                output logic 	      ZeroE, LessE,
+                output logic 	      ZeroE, LessE, LessUE,
                 // Memory stage signals
                 input logic 	      MemWriteM, 
                 output logic [31:0] WriteDataM, ALUResultM,
@@ -401,7 +406,7 @@ module datapath(input logic clk, reset,
    assign Rs2D      = InstrD[24:20];
    assign RdD       = InstrD[11:7];
    
-   regfile        rf(clk, RegWriteW, Rs1D, Rs2D, RdW, ResultW, RD1D, RD2D);
+   regfile        rf(clk, reset, RegWriteW, Rs1D, Rs2D, RdW, ResultW, RD1D, RD2D);
    extend         ext(InstrD[31:7], ImmSrcD, ImmExtD);
    
    // Execute stage pipeline register and logic
@@ -418,6 +423,7 @@ module datapath(input logic clk, reset,
 
    alu           alu(SrcAE_Final, SrcBE, ALUControlE, ALUResultE, ZeroE);
    assign LessE = ALUResultE[0];
+   assign LessUE = ALUResultE[0];
    // JALR vs JAL/Branch Target Selection
    adder         branchadd(ImmExtE, PCE, PCTargetE);
    mux2  #(32)   jalrmux(PCTargetE, ALUResultE, JalrE, PCTargetE_Final);
@@ -488,7 +494,7 @@ module hazard(input  logic [4:0] Rs1D, Rs2D, Rs1E, Rs2E, RdE, RdM, RdW,
    assign FlushE = lwStallD | PCSrcE;
 endmodule
 
-module regfile(input  logic        clk, 
+module regfile(input  logic        clk, reset, 
                input logic 	   we3, 
                input logic [ 4:0]  a1, a2, a3, 
                input logic [31:0]  wd3, 
@@ -501,9 +507,13 @@ module regfile(input  logic        clk,
    // write third port on rising edge of clock (A3/WD3/WE3)
    // write occurs on falling edge of clock
    // register 0 hardwired to 0
-
-   always_ff @(negedge clk)
-     if (we3) rf[a3] <= wd3;	
+   always_ff @(negedge clk, posedge reset)
+     if (reset) begin
+        // Using a loop inside a reset is synthesizable in most modern tools
+        for (int i = 0; i < 32; i = i + 1) rf[i] <= 32'b0;
+     end else begin
+        if (we3) rf[a3] <= wd3;
+     end
 
    assign rd1 = (a1 != 0) ? rf[a1] : 0;
    assign rd2 = (a2 != 0) ? rf[a2] : 0;

@@ -10,23 +10,23 @@ cModel Technology
 Z0 dC:/Users/zanef/OneDrive/Desktop/School/ECEN Curriculum/ECEN 4243/Lab/Lab3/lab3/hdl
 vadder
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1776280570
+Z2 !s110 1776282925
 !i10b 1
-!s100 f5ImkM5OdgiVo=AlSa:LL3
-I6TXVczWP2=jLSUnzJP=RX0
+!s100 lIH77<:CDfZP]VmBbP0V92
+IDHkncRP>^7Co90]zGZX4G2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 !s105 riscv_pipelined_sv_unit
 S1
 R0
-Z5 w1776280535
+Z5 w1776282911
 Z6 8riscv_pipelined.sv
 Z7 Friscv_pipelined.sv
-L0 512
+L0 522
 Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1776280570.000000
+Z9 !s108 1776282925.000000
 Z10 !s107 riscv_pipelined.sv|
 Z11 !s90 -reportprogress|300|riscv_pipelined.sv|
 !i113 1
@@ -35,8 +35,8 @@ valu
 R1
 R2
 !i10b 1
-!s100 bJ9>gG5MgWLYBMiGdfm6[0
-InXUd5`XbLGM0Vzf]hfZdG3
+!s100 lkgf1CAQ:Fm0EVZTO6g4Q1
+IPME8Cn0U^M_XV1`l[FM4>0
 R3
 R4
 S1
@@ -44,7 +44,7 @@ R0
 R5
 R6
 R7
-L0 621
+L0 631
 R8
 r1
 !s85 0
@@ -58,8 +58,8 @@ valudec
 R1
 R2
 !i10b 1
-!s100 0GBZJFZLdSKf=`N4:gonl0
-IDYDnK<le?B1HV<AMPh5]F2
+!s100 J:P3d3[Y36IR^XDTk9_Cz2
+IEJ[TMG?80<`j55@gY5NA30
 R3
 R4
 S1
@@ -104,8 +104,8 @@ vdatapath
 R1
 R2
 !i10b 1
-!s100 m>h6mnk>Ke0JI=Oj[`S3G3
-IkVmBT1L8nPlFZFe01c61T1
+!s100 UU;B`VHRU:zo3h1F48A1V2
+I]GIm0AIfSU@_boo`VRIYK1
 R3
 R4
 S1
@@ -113,7 +113,7 @@ R0
 R5
 R6
 R7
-L0 328
+L0 333
 R8
 r1
 !s85 0
@@ -127,8 +127,8 @@ vdmem
 R1
 R2
 !i10b 1
-!s100 B?O@TdRl_S:JidVMDo`Ya2
-IZ3GTYHSik^cJF<@kSb4G:1
+!s100 cBRj8RPlPaWhzT7B0NUnh2
+IfT]M1OCmHMJ:4KYCUTZlN0
 R3
 R4
 S1
@@ -136,7 +136,7 @@ R0
 R5
 R6
 R7
-L0 609
+L0 619
 R8
 r1
 !s85 0
@@ -150,8 +150,8 @@ vextend
 R1
 R2
 !i10b 1
-!s100 CKVGJdCG1VZ8=@KXk8W^d3
-IgeTN7ohA^gBiBOJHjFZ1`2
+!s100 o_kjG7jX7Ek7l2L3]9:R`1
+IcV?6JP@6iTkX1Y@9SLhII3
 R3
 R4
 S1
@@ -159,7 +159,7 @@ R0
 R5
 R6
 R7
-L0 518
+L0 528
 R8
 r1
 !s85 0
@@ -173,31 +173,8 @@ vflopenr
 R1
 R2
 !i10b 1
-!s100 m1bojHHW?5JlRC4[ZB09]0
-IJU6M=]`QFdE6RGjEKON9g0
-R3
-R4
-S1
-R0
-R5
-R6
-R7
-L0 548
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 1
-R12
-vflopenrc
-R1
-R2
-!i10b 1
-!s100 BU:4;ihezMdD@3;;b@n9?3
-IIkUmNBJFUiHo0nOYLV8S?1
+!s100 Qb^7X[k_QKZ1B<GMOP[MA0
+I7H=5g9_82>SfhiI1:<T;I2
 R3
 R4
 S1
@@ -215,12 +192,12 @@ R10
 R11
 !i113 1
 R12
-vflopr
+vflopenrc
 R1
 R2
 !i10b 1
-!s100 VB`lZT2jE?WWU=B7_0?d21
-IC<a3eG1`09leg8B^PUa4P1
+!s100 [X8kjW1A:eWG53z2omWfP1
+IUg40L>nTQ_3oI<?YM@FPm2
 R3
 R4
 S1
@@ -228,7 +205,30 @@ R0
 R5
 R6
 R7
-L0 538
+L0 568
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vflopr
+R1
+R2
+!i10b 1
+!s100 `zEULC4a4I8J05TX=6WRZ3
+IB91ibNX3em]5]Q?z_5F7d0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 548
 R8
 r1
 !s85 0
@@ -242,8 +242,8 @@ vfloprc
 R1
 R2
 !i10b 1
-!s100 [X285fC<M8Pz?`[BYXGZg0
-I]V9gRWaCF06mLSN1e2Sk73
+!s100 M0iZEU^dk_fP^h7[@UFo=2
+II]2cBg]n@4z:V@@[N@VZK3
 R3
 R4
 S1
@@ -251,7 +251,7 @@ R0
 R5
 R6
 R7
-L0 570
+L0 580
 R8
 r1
 !s85 0
@@ -265,8 +265,8 @@ vhazard
 R1
 R2
 !i10b 1
-!s100 igJ6mHfj6Ub=?dz@TgcXk3
-I38mNhWT>z__f]meeSMeGC0
+!s100 bmMNonHzOcQ75FU;2Tibd0
+Ii[5=K2zzT[cRAVW<e>91T0
 R3
 R4
 S1
@@ -274,7 +274,7 @@ R0
 R5
 R6
 R7
-L0 462
+L0 468
 R8
 r1
 !s85 0
@@ -288,8 +288,8 @@ vimem
 R1
 R2
 !i10b 1
-!s100 PH4M`C<Ti_<[;cU^_iNoB0
-I`9_U^0<;hGW9URMG=TDfj2
+!s100 WFVgG>:ocC^a2SoXJ:I`Q1
+I@_1F]mYdz4A[A`nX@eI^=1
 R3
 R4
 S1
@@ -297,7 +297,7 @@ R0
 R5
 R6
 R7
-L0 600
+L0 610
 R8
 r1
 !s85 0
@@ -334,8 +334,8 @@ vmux2
 R1
 R2
 !i10b 1
-!s100 >P[_mSY]l6TeA4^ElMleY2
-ITPo__7^jloFh`>YGe_eD02
+!s100 ER4ZN=E>KHX;E]bf1d;nW1
+I?ZhVh:87RRfO=6mdGB;KF3
 R3
 R4
 S1
@@ -343,7 +343,7 @@ R0
 R5
 R6
 R7
-L0 584
+L0 594
 R8
 r1
 !s85 0
@@ -357,8 +357,8 @@ vmux3
 R1
 R2
 !i10b 1
-!s100 oV7AeJ23EllJ?KH<Xb?bU1
-I:EGf[A<V1Om3YH];dF@z43
+!s100 VeWAl@BZjkK^^^4gBFo2n3
+Iie:3JnH:6jN2R12L=odVG1
 R3
 R4
 S1
@@ -366,7 +366,7 @@ R0
 R5
 R6
 R7
-L0 592
+L0 602
 R8
 r1
 !s85 0
@@ -380,8 +380,8 @@ vregfile
 R1
 R2
 !i10b 1
-!s100 XckTMjWACH_j31fzRSn^W0
-IY3N>Lzge=CfPan5RmA`h10
+!s100 R;34RA`8hGfd3=84UPFd02
+I<:SY16Rd2?cbbPkfVBM7c3
 R3
 R4
 S1
@@ -389,7 +389,7 @@ R0
 R5
 R6
 R7
-L0 491
+L0 497
 R8
 r1
 !s85 0
@@ -403,8 +403,8 @@ vriscv
 R1
 R2
 !i10b 1
-!s100 ]Uz@^OA9B[4<BfkL;fCVZ2
-IHnM7]D=N<hDlmNRSDE5oE3
+!s100 a=QTfmJHEf;gmXYlf6ih50
+IObO2ko_`D?f9<3m=OP0a62
 R3
 R4
 S1
@@ -426,8 +426,8 @@ vtestbench
 R1
 R2
 !i10b 1
-!s100 QmBVQ6aZ^dYchQcDPV<T_3
-I2gZLA^2flN`5Qz@8V5imX1
+!s100 S@9mI5g1kDYkz_?=ie?_V3
+ID@I^0<A4ToJWZ2c`n2VNJ1
 R3
 R4
 S1
