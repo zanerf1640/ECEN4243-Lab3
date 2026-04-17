@@ -1,6 +1,6 @@
 # do {.\riscv_pipelined.do}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:55:25 on Apr 15,2026
+# Start time: 16:10:32 on Apr 17,2026
 # vlog -reportprogress 300 riscv_pipelined.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -25,10 +25,10 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:55:25 on Apr 15,2026, Elapsed time: 0:00:00
+# End time: 16:10:32 on Apr 17,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -debugdb -voptargs="+acc" work.testbench 
-# Start time: 14:55:25 on Apr 15,2026
+# Start time: 16:10:32 on Apr 17,2026
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.top
@@ -50,26 +50,24 @@
 # Loading work.hazard
 # Loading work.imem
 # Loading work.dmem
-# ** Warning: (vsim-3015) riscv_pipelined.sv(225): [PCDPC] - Port size (3) does not match connection size (1) for port 'ImmSrc'. The port definition is at: riscv_pipelined.sv(267).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/rv32pipe/c/md File: riscv_pipelined.sv
-# ** Warning: (vsim-3015) riscv_pipelined.sv(225): [PCDPC] - Port size (2) does not match connection size (1) for port 'ALUOp'. The port definition is at: riscv_pipelined.sv(268).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/rv32pipe/c/md File: riscv_pipelined.sv
-# ** Warning: (vsim-3015) riscv_pipelined.sv(225): [PCDPC] - Port size (1) does not match connection size (3) for port 'ALUASrc'. The port definition is at: riscv_pipelined.sv(269).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/rv32pipe/c/md File: riscv_pipelined.sv
-# ** Warning: (vsim-3015) riscv_pipelined.sv(225): [PCDPC] - Port size (1) does not match connection size (2) for port 'Jalr'. The port definition is at: riscv_pipelined.sv(270).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/rv32pipe/c/md File: riscv_pipelined.sv
-# ** Warning: (vsim-3015) riscv_pipelined.sv(173): [PCDPC] - Port size (2) does not match connection size (3) for port 'ResultSrcW'. The port definition is at: riscv_pipelined.sv(359).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/dut/rv32pipe/dp File: riscv_pipelined.sv
 # ** Note: (vsim-8900) Creating design debug database vsim.dbg.
 # It appears vopt was not run with -debugdb option on this design.
 # Advanced Causality and Schematic debug features will not be available.
 # ** Error: (vsim-8357) Internal debugDB error id:ct1  ret:1 table context_tbl already exists
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: zanef  Hostname: ZANE  ProcessID: 22592
+#           Attempting to use alternate WLF file "./wlft641i8m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft641i8m
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 65 of file "../riscvtest/test_hw.memfile". (Current address [64], address range [0:63])    : riscv_pipelined.sv(96)
 #    Time: 0 ps  Iteration: 0  Instance: /testbench
+# Simulation failed
+# Simulation failed
+# Simulation failed
 # ** Error: add: bad option "schematic": must be dataflow, list, log, memory, message, testbrowser, watch, wave
 # Error in macro ././riscv_pipelined.do line 90
 # add: bad option "schematic": must be dataflow, list, log, memory, message, testbrowser, watch, wave
 #     while executing
 # "add schematic -full sim:/testbench/dut/rv32pipe"
-# End time: 14:56:39 on Apr 15,2026, Elapsed time: 0:01:14
-# Errors: 4, Warnings: 6
+# End time: 16:10:55 on Apr 17,2026, Elapsed time: 0:00:23
+# Errors: 4, Warnings: 3
