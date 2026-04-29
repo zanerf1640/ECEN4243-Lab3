@@ -232,10 +232,10 @@ module controller(input  logic		 clk, reset,
    aludec  ad(opD[5], funct3D, funct7b5D, ALUOpD, ALUControlD);
    
    // Execute stage pipeline control register and logic
+   
    floprc #(16) controlregE(clk, reset, FlushE,
                             {RegWriteD, ResultSrcD, MemWriteD, JumpD, BranchD, ALUControlD, ALUSrcD, ALUASrcD, JalrD, funct3D},
                             {RegWriteE, ResultSrcE, MemWriteE, JumpE, BranchE, ALUControlE, ALUSrcE, ALUASrcE, JalrE, funct3E});
-
    // Branch Logic in Execute Stage
    always_comb begin
     case (funct3E)
